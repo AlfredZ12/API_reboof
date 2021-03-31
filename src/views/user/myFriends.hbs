@@ -1,0 +1,18 @@
+{{>userProfile}}
+{{#if friends}}
+<section class="contenedor-friends">
+      {{#each friends}}
+      <ul class="contenedor-friend">
+            <div class="contenedor-profile-friend">
+                  <img class="profile-friend" src="{{_id.imgProfileUrl}}">
+                  <div class="contenedor-info-friend">
+                        <a class="info" href="#">{{_id.name}}</a>
+                        <span>info</span>
+                  </div>
+                  <button type="submit" id="deletefriend" href="/user/myfriends/{{_id._id}}/{{request}}"> <a
+                              class="Aceptar" href="/user/myfriends/{{_id._id}}/{{request}}">Eliminar</a></button>
+            </div>
+      </ul>
+      {{/each}}
+</section>
+{{/if}}

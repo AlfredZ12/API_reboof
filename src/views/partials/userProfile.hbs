@@ -1,0 +1,53 @@
+
+{{#if user}}
+<section class="contenedor-profile">
+  
+   <div class="contenedor-profile-user">
+      <img src="{{user.imgProfileUrl}}" alt="">
+   </div>
+   <div class="contenedor-menu">
+      <ul class="menu-profile">
+         <li class="menu-item"><span><a href="/user"> Publications</a></span> </li>
+         <li class="menu-item" ><span>Information</span> </li>
+         <li class="menu-item" ><span><a href="/user/myFriends">friends </a> </span> </li>
+         <li class="menu-item"><span>profile-item</span> </li>
+         <li class="menu-item"  id ="sub"><span>S</span>
+         <ul class = "submenu-profile"> 
+            <li class"submenu-profile-item"><span>profile-item</span> </li>
+         </ul>
+         </li>
+   </div>
+<section class="contenedor-publications" style = "top:500px;">
+<div class="contendero-publications" >
+{{#if publications}}
+{{#each publications}}
+<div class="publication">
+   <div class="contenedor-bodypublication">
+        <form action="/index/delete_publication/{{id}}" method="POST" >
+         <button type="submit">Delete</button>
+      </form>
+      <p>{{body}}</p>
+
+      
+      
+   </div>
+      {{#if image}}
+  <div class="contenedor-images-publication">
+      {{#each image}}
+      <div class="contenedor-image-publication">
+      <img class="img-publication"  href = "{{url}}" src="{{url}}" alt="" > 
+      </div>
+      {{/each}}
+       </div>
+      {{/if}}
+   <form action="/index/like_publicacion/{{_id}}/" method="PUT">
+       <button id = "like"type="submit" class="btn"><span  style = "color:blueviolet"><i class="far fa-thumbs-up"></i> <span>{{likes.length}}</span></span></button> 
+  </form>
+</div>
+{{/each}}
+{{/if}}
+</div>
+</section>
+
+</section>
+{{/if}}

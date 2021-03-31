@@ -1,0 +1,56 @@
+<section class="contenedor-publications">
+
+<div class="contenedor-create">
+   <h3> new Publication? {{user.name}}</h3>
+   <form id="area" action="/index" method="post" enctype="multipart/form-data">
+      <textarea type="text" class="body-area" id="txt_publicate" autofocus="autofocus" placeholder="Write here..."
+         name="pu"></textarea>
+      <div name="attachment" id="attachment" class="btn"><i class="far fa-images"></i></div>
+      <input type="file" name="image" id="file-input"  accept="image/*" style="display:none" multiple />
+      <div id="add_labels"></div>
+      <input class="btn-publicate" id="publicate" type="submit" disabled><span class="con"></span>
+
+   </form>
+</div>
+
+<div class="contendero-publications">
+
+{{#if publications}}
+
+{{#each publications}}
+<div class="publication">
+   <div class="contenedor-bodypublication" id="#publication">
+  
+      <p>{{body}}</p>
+   </div>
+      {{#if image}}
+  <div class="contenedor-images-publication">
+      {{#each image}}
+      <div class="contenedor-image-publication">
+      <img class="img-publication"  href = "{{url}}" src="{{url}}" alt="" > 
+      </div>
+      {{/each}}
+       </div>
+       
+      {{/if}}
+       <form action="/index/like_publicacion/{{_id}}/" method="PUT">
+       <button id = "like"type="submit" class="btn"><span  style = "color:blueviolet"><i class="far fa-thumbs-up"></i> <span>{{likes.length}}</span></span></button> 
+  </form>
+       
+</div>
+
+<div id="comments">
+   {{#each comments }}
+      <span style="margin-left: 20px ; color: white;">{{comment.author.name}}</span>
+       <p style="margin-left: 20px ; color: white;">{{comment.bodyComment}}</p>
+   {{/each}}
+</div>
+  
+</div>
+ 
+
+{{/each}}
+
+{{/if}}
+</div>
+</section>

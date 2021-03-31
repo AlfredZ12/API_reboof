@@ -1,0 +1,41 @@
+<div class="contenedor-navigation">
+
+    <nav class="navigation">
+        {{#if user}}
+        <div class="img-nav">
+           <a  title="index " href="/index"> <img src="/img/Logo-Post.png"></a>
+        </div>
+        <form action="/search" >
+           <div class="contenedor-search"> 
+            <input type="search" name ="search" placeholder="search" >   
+            </div>
+             </form>
+         <ul class="contenedor">
+            <li class="item-nav">
+                <a class="a-nav" href="/index">Index</a>
+            </li>
+        {{else}}
+           <div class="img-nav">
+           <a  title="index " href="/"> <img src="/img/Logo-Post.png"></a>
+        </div>
+         <ul class="contenedor">
+            <li class="item-nav">
+                <a class="a-nav" href="/">Index</a>
+            </li>
+        {{/if}}
+       
+            <li class="item-nav">
+                <a class="a-nav" href="/about">About</a>
+            </li >
+        {{#if user}}
+           <li class="item-nav">
+                <a class="a-nav" href="/logout">Logout</a>
+            </li >
+        {{/if}}
+        
+              <div class="menu-hamburguesa" id="menu-hamburguesa"><span>&#9776;</span></div>
+               <div class="menu-hamburguesa" id="menu-hamburguesa1"  style="visibility:hidden">&#8592;</div>
+               </nav>
+        </div>
+      
+   

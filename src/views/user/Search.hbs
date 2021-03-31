@@ -1,0 +1,49 @@
+{{>userOptions}}
+<div class="contenedor-searchs">
+   {{#if myfriends}}
+
+   {{#each myfriends}}
+   <form action="/sendrequest/{{id}}">
+      <ul class="contenedor-profiles-search">
+         <div class="contenedor-profile-search">
+            <img class="profile-img-search" src="{{imgProfileUrl}}">
+            <div class="contenedor-info-search">
+               <a class="info" href="#">{{name}}</a>
+               <span>infopooo</span>
+               
+
+            </div>
+         </div>
+         <!-- #region   <button type="submit"  class="btn-Register" href="/user/myfriends/{{_id._id}}/{{request}}"> <a class = "Aceptar" href="/user/myfriends/{{_id._id}}/{{request}}" >Eliminar</a></button>  
+                #endregion -->
+
+
+      </ul>
+   </form>
+
+   {{/each}}
+  
+
+   {{/if}}
+
+   {{#if searchUser }}
+   {{#each searchUser}}
+   
+      <ul class="contenedor-profiles-search">
+         <div class="contenedor-profile-search">
+            <img class="profile-img-search" src="{{imgProfileUrl}}">
+            <div class="contenedor-info-search">
+               <a class="info" href="#">{{name}}</a>
+               <span>info</span>
+               <span name="id_received" value="{{id}}"></span>
+               <a href="/sendrequest/{{id}}"><button type="submit">Añadir</button></a>
+            </div>
+         </div>
+         <!-- #region   <button type="submit"  class="btn-Register" href="/user/myfriends/{{_id._id}}/{{request}}"> <a class = "Aceptar" href="/user/myfriends/{{_id._id}}/{{request}}" >Eliminar</a></button>  
+                   #endregion -->
+      </ul>
+  
+   {{/each}}
+
+   {{/if}}
+</div>

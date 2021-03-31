@@ -1,0 +1,20 @@
+
+{{#each Received}}
+<!-- #regi -->
+
+
+<div class="contenedor-form"  >
+
+      <!-- #region  <input type="hidden" name="_method" value="PUT"> -->
+     
+        <div class="btn-contenedor">
+            <img class="profile-request" src="{{send.imgProfileUrl}}" >
+               <p name = "name" value = "{{_id}}">{{send.name}}</p>
+            <button type="submit"  class=""> <a class = "Aceptar" href="/myRequestReceived/Acept/{{_id}}">Acept</a></button>
+             <button type="submit"  class=""> <a class = "Aceptar" href="/myRequestReceived/Decline/{{_id}}">Delete</a></button>
+        </div>
+  
+</div>
+
+{{/each}}
+
